@@ -24,6 +24,9 @@ ZSH_THEME="memes"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+# Comment out to disable auto update
+~/.custom-oh-my-zsh/update.sh &> /dev/null &
+
 # User configuration
 ## Add ssh keys (-K ensures that passwords are loaded from keychain)
 ssh-add -K ~/.ssh/id_rsa
