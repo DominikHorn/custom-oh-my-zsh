@@ -24,19 +24,20 @@ then
   git clone https://github.com/DominikHorn/custom-oh-my-zsh.git $CUSTOM_DIR
 fi
 
-# Replace .zshrc with custom one
-if [[ -e "$ZSHRC" && ! -e "$ZSHRC_BACKUP" ]];
+if [[ -e "$ZSHRC" ]];
 then
-  # Backup old .zshrc
   if [[ ! -e "$ZSHRC_BACKUP" ]];
   then
-    print $RED "Replacing '$ZSHRC' Old file may be found under $ZSHRC_BACKUP" $NO_COLOR
+    # Backup old .zshrc if present
+    print $YELLOW "Replacing '$ZSHRC' Old file may be found under $ZSHRC_BACKUP" $NO_COLOR
     mv $ZSHRC $ZSHRC_BACKUP
-  fi
 
-  # Install custom .zshrc
-  ln $CUSTOM_DIR/zshrc "$ZSHRC"
-  print $RED "Installed custom $ZSHRC. Please add applicable custom configuration to $CUSTOMRC" $NO_COLOR
+    # Install custom .zshrc
+    ln $CUSTOM_DIR/zshrc "$ZSHRC"
+    print $YELLOW "Installed custom $ZSHRC. Please add applicable custom configuration to $CUSTOMRC" $NO_COLOR
+  else
+    print $RED "Assuming custom oh my zsh is alread installed since both $ZSHRC and $ZSHRC_BACKUP exit" $NO_COLOR
+  fi
 fi
 
 # Link all themes into the themes folder
