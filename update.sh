@@ -26,11 +26,11 @@ then
    print $BLUE "Already up to date" $NO_COLOR
    exit 0
 else 
-  git -C $CUSTOM_DIR pull
+  git -C $CUSTOM_DIR pull &> /dev/null
 fi
 
 # Actually install updates
-print BLUE "Installing updates..."
+print $BLUE "Installing updates..."
 zsh -c $CUSTOM_DIR/install.sh
 
 # Print change log
