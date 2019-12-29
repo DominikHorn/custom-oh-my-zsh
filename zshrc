@@ -1,3 +1,6 @@
+# Comment out to disable auto update
+~/.custom-oh-my-zsh/update.sh
+
 # ZSH global settings
 export ZSH=~/.oh-my-zsh
 export UPDATE_ZSH_DAYS=5
@@ -23,9 +26,6 @@ ZSH_THEME="memes"
 # Which plugins would you like to load?
 plugins=(git docker osx)
 source $ZSH/oh-my-zsh.sh
-
-# Comment out to disable auto update
-~/.custom-oh-my-zsh/update.sh
 
 # User configuration
 ## Add ssh keys (-K ensures that passwords are loaded from keychain)
