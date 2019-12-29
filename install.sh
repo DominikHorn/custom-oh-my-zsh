@@ -47,7 +47,7 @@ then
 else 
     # Install custom .zshrc
     ln $CUSTOM_DIR/zshrc "$ZSHRC"
-    ln $CUSTOM_DIR/zshrc "$ZSHRC_BACKUP"
+    [[ ! -e "$ZSHRC_BACKUP" ]] && ln $CUSTOM_DIR/zshrc "$ZSHRC_BACKUP"
     print $BLUE "Installed custom $ZSHRC. Please add applicable custom configuration to $CUSTOMRC" $NO_COLOR
 
     # Reload configuration
