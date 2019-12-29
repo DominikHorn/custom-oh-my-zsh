@@ -9,7 +9,7 @@ NO_COLOR="\033[0m"
 CUSTOM_DIR=~/.custom-oh-my-zsh
 
 print $BLUE "Fetching updates for custom oh my-zsh from remote..." $NO_COLOR
-git -C $CUSTOM_DIR fetch
+git -C $CUSTOM_DIR fetch &> /dev/null
 CHANGE_LOG=$(curl -sSf https://raw.githubusercontent.com/DominikHorn/custom-oh-my-zsh/master/update.sh &> /dev/null \
              && git -C $CUSTOM_DIR log --no-decorate --no-merges --pretty="format:%s%b" ..origin/master \
                 | awk '{printf "%d. %s\n", NR, $0}')
