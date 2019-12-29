@@ -3,6 +3,7 @@
 RED="\033[1;31m"
 GREEN="\033[1;32m"
 YELLOW="\033[1;33m"
+BLUE="\033[1;34m"
 NO_COLOR="\033[0m"
 OH_MY_ZSH_DIR=~/.oh-my-zsh
 CUSTOM_DIR=~/.custom-oh-my-zsh
@@ -13,14 +14,14 @@ CUSTOMRC=~/.customrc
 # Install oh my zsh if not present
 if [[ ! -d $OH_MY_ZSH_DIR ]];
 then
-  print $YELLOW "Installing oh-my-zsh on system" $NO_COLOR
+  print $BLUE "Installing oh-my-zsh on system" $NO_COLOR
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 # Clone repo if not present (i.e., install script downloaded and executed separatelly)
 if [[ ! -d "$CUSTOM_DIR" ]];
 then
-  print $YELLOW "Cloning repository since no copy was found locally" $NO_COLOR
+  print $BLUE "Cloning repository since no copy was found locally" $NO_COLOR
   git clone https://github.com/DominikHorn/custom-oh-my-zsh.git $CUSTOM_DIR
 fi
 
@@ -33,16 +34,24 @@ then
   if [[ ! -e "$ZSHRC_BACKUP" ]];
   then
     # Backup old .zshrc if present
-    print $YELLOW "Replacing '$ZSHRC' Old file may be found under $ZSHRC_BACKUP" $NO_COLOR
+    print $BLUE "Replacing '$ZSHRC' Old file may be found under $ZSHRC_BACKUP" $NO_COLOR
     mv $ZSHRC $ZSHRC_BACKUP
 
     # Install custom .zshrc
     ln $CUSTOM_DIR/zshrc "$ZSHRC"
-    print $YELLOW "Installed custom $ZSHRC. Please add applicable custom configuration to $CUSTOMRC" $NO_COLOR
+    print $BLUE "Installed custom $ZSHRC. Please add applicable custom configuration to $CUSTOMRC" $NO_COLOR
 
     # Reload configuration
     source $ZSHRC
   else
     print $RED "Assuming custom oh my zsh is alread installed since both $ZSHRC and $ZSHRC_BACKUP exit" $NO_COLOR
   fi
+else 
+    # Install custom .zshrc
+    ln $CUSTOM_DIR/zshrc "$ZSHRC"
+    ln $CUSTOM_DIR/zshrc "$ZSHRC_BACKUP"
+    print $BLUE "Installed custom $ZSHRC. Please add applicable custom configuration to $CUSTOMRC" $NO_COLOR
+
+    # Reload configuration
+    source $ZSHRC
 fi
