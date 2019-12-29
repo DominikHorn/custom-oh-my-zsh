@@ -43,8 +43,6 @@ then
 
     # Reload configuration
     source $ZSHRC
-  else
-    print $RED "Assuming custom oh my zsh is alread installed since both $ZSHRC and $ZSHRC_BACKUP exit" $NO_COLOR
   fi
 else 
     # Install custom .zshrc
