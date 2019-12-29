@@ -25,8 +25,10 @@ if [[ -z $CHANGE_LOG ]];
 then 
    print $BLUE "Already up to date" $NO_COLOR
    exit 0
-else 
-  git -C $CUSTOM_DIR pull &> /dev/null
+else
+  git -C $CUSTOM_DIR add -A
+  git -C $CUSTOM_DIR stash &> /dev/null
+  git -C $CUSTOM_DIR checkout origin/master &> /dev/null
 fi
 
 # Actually install updates
