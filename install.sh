@@ -43,3 +43,6 @@ fi
 # Link all themes into the themes folder
 find $CUSTOM_DIR/themes/*.zsh-theme -exec ln -f {} $OH_MY_ZSH_DIR/themes \;
 print $GREEN "Linked all themes. You may now set one of the custom themes by editing the $ZSHRC file" $NO_COLOR
+
+# Reload configuration
+source $ZSHRC
