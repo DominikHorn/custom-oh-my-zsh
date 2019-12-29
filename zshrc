@@ -21,7 +21,7 @@ ZSH_THEME="memes"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load?
-plugins=(git)
+plugins=(git brew docker osx)
 source $ZSH/oh-my-zsh.sh
 
 # Comment out to disable auto update
