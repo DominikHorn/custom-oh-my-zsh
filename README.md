@@ -1,4 +1,4 @@
-# Purpose
+# Purpose of this project
 This repository contains custom theme(s)/functions etc written by me for [oh my zsh](https://github.com/ohmyzsh/). See their website and guides for more in depth explanations
 
 # Installation
