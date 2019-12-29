@@ -1,5 +1,7 @@
 # Purpose of this project
-This repository contains custom theme(s)/functions etc written by me for [oh my zsh](https://github.com/ohmyzsh/). See their website and guides for more in depth explanations
+This repository contains custom theme(s)/functions etc written by me for using [oh my zsh](https://github.com/ohmyzsh/) on *My local machines*. 
+No guarantees that these configurations work for anyone else, but they may provide a great starting point if you're looking for customization
+options.
 
 # Installation
 This section details how to install the (various) customizations found in this repo. Make sure to have zsh installed before running any scripts.
