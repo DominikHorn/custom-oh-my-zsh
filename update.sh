@@ -6,11 +6,12 @@ YELLOW="\033[1;33m"
 BLUE="\033[1;34m"
 NO_COLOR="\033[0m"
 
-CUSTOM_DIR=~/.custom-oh-my-zsh
+CUSTOM_DIR=~/.dshell
+PROJECT_NAME="dshell"
 
-print $BLUE "Fetching updates for custom oh-my-zsh from remote..." $NO_COLOR
+print $BLUE "Fetching updates for $PROJECT_NAME from remote..." $NO_COLOR
 git -C $CUSTOM_DIR fetch &> /dev/null
-CHANGE_LOG=$(curl -sSf https://raw.githubusercontent.com/DominikHorn/custom-oh-my-zsh/master/update.sh &> /dev/null \
+CHANGE_LOG=$(curl -sSf https://raw.githubusercontent.com/DominikHorn/$PROJECT_NAME/master/update.sh &> /dev/null \
              && git -C $CUSTOM_DIR log --no-decorate --no-merges --pretty="format:%s" ..origin/master \
                 | awk '{printf "    %d. %s\n", NR, $0}')
 

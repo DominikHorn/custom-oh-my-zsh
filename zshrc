@@ -1,5 +1,5 @@
 # Comment out to disable auto update
-~/.custom-oh-my-zsh/update.sh
+~/.dshell/update.sh
 
 # ZSH global settings
 export ZSH=~/.oh-my-zsh
