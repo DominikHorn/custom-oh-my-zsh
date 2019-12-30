@@ -1,5 +1,5 @@
 # The prompt
-PROMPT='%{$fg[magenta]%}[%~]%{$reset_color%} ➤ '
+PROMPT='%{$fg[magenta]%}[%2~]%{$reset_color%} ➤ '
 RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%}$(git_prompt_status) ${time}%{$reset_color%}'
 
 # local time, color coded by last return code
