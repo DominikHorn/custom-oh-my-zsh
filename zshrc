@@ -39,7 +39,9 @@ alias ll='ls -alh'
 ## Load custom configuration
 source ~/.customrc
 
-# Print banner
+# Print banner if enough columns are available
+if [[ $COLUMNS -gt 116 ]];
+then
 print $BLUE
 cat <<-'EOF'
                     _   _                                       _                   _         _              _   _ 
@@ -51,3 +53,4 @@ cat <<-'EOF'
                                                                                                                    
                                                                                                                    
 EOF
+fi
