@@ -1,5 +1,14 @@
-# Comment out to disable auto update
-~/.dshell/update.sh
+# Comment out to disable auto update. 
+# Credit for update interval code: https://stackoverflow.com/a/16157488
+TIMESTAMP_FILE=~/.dshell.updatetimestamp
+date +"%Y%m%d" |         ## Generate timestamp
+tee $TIMESTAMP_FILE.tmp |      ## Save a copy for later usage
+cmp - $TIMESTAMP_FILE &> /dev/null ||       ## Fail if date-spec changed
+{  
+  ## Update timestamp and run code
+  mv $TIMESTAMP_FILE.tmp $TIMESTAMP_FILE &&
+  ~/.dshell/update.sh
+}
 
 # ZSH global settings
 export ZSH=~/.oh-my-zsh
