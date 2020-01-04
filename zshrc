@@ -44,6 +44,7 @@ ssh-add -K ~/.ssh/id_rsa
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -alh'
+alias gitc='git branch --merged | egrep -v "(^\*|development|dev|master)" | xargs git branch -d'
 
 ## Load custom configuration
 source ~/.customrc
