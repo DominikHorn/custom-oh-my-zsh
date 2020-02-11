@@ -33,7 +33,7 @@ ZSH_THEME="memes"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load?
-plugins=(git docker osx)
+plugins=(git docker osx yarn)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -45,6 +45,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -alh'
 alias gitc='git branch --merged | egrep -v "(^\*|development|dev|master)" | xargs git branch -d'
+alias gitcr='git branch --all --merged | egrep -v "(^\*|development|master|dev)" | sed -e "s/remotes\/origin\///" | xargs git push -d origin'
+alias unzip2='ditto -V -x -k --sequesterRsrc --rsrc'
 
 ## Load custom configuration
 source ~/.customrc
