@@ -1,3 +1,6 @@
+## Load custom configuration
+source ~/.customrc
+
 # Comment out to disable auto update. 
 # Credit for update interval code: https://stackoverflow.com/a/16157488
 TIMESTAMP_FILE=~/.dshell.updatetimestamp
@@ -49,20 +52,17 @@ alias gitcr='git branch --all --merged | egrep -v "(^\*|development|master|dev)"
 alias unzip2='ditto -V -x -k --sequesterRsrc --rsrc'
 alias qed='exit'
 
-## Load custom configuration
-source ~/.customrc
-
 # Print banner if enough columns are available
 if [[ $COLUMNS -gt 116 ]];
 then
 print $BLUE
 cat <<-'EOF'
-                    _   _                                       _                   _         _              _   _ 
-                   | | | |                                     | |                 | |       | |            | | | |
- __      __   ___  | | | |   ___    ___    _ __ ___     ___    | |_    ___       __| |  ___  | |__     ___  | | | |
- \ \ /\ / /  / _ \ | | | |  / __|  / _ \  | '_ ` _ \   / _ \   | __|  / _ \     / _` | / __| | '_ \   / _ \ | | | |
-  \ V  V /  |  __/ | | | | | (__  | (_) | | | | | | | |  __/   | |_  | (_) |   | (_| | \__ \ | | | | |  __/ | | | |
-   \_/\_/    \___| |_| |_|  \___|  \___/  |_| |_| |_|  \___|    \__|  \___/     \____| |___/ |_| |_|  \___| |_| |_|
+                    _                                       _                   _         _              _   _ 
+                   | |                                     | |                 | |       | |            | | | |
+ __      __   ___  | |   ___    ___    _ __ ___     ___    | |_    ___       __| |  ___  | |__     ___  | | | |
+ \ \ /\ / /  / _ \ | |  / __|  / _ \  | '_ ` _ \   / _ \   | __|  / _ \     / _` | / __| | '_ \   / _ \ | | | |
+  \ V  V /  |  __/ | | | (__  | (_) | | | | | | | |  __/   | |_  | (_) |   | (_| | \__ \ | | | | |  __/ | | | |
+   \_/\_/    \___| |_|  \___|  \___/  |_| |_| |_|  \___|    \__|  \___/     \____| |___/ |_| |_|  \___| |_| |_|
                                                                                                                    
                                                                                                                    
 EOF
