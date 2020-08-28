@@ -66,4 +66,6 @@ cat <<-'EOF'
                                                                                                                    
                                                                                                                    
 EOF
+
+curl wttr.in
 fi
