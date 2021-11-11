@@ -36,7 +36,7 @@ ZSH_THEME="memes"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load?
-plugins=(git docker osx yarn)
+plugins=(git docker macos yarn)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
