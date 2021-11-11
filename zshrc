@@ -40,8 +40,8 @@ plugins=(git docker macos yarn)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-## Add ssh keys (-K ensures that passwords are loaded from keychain)
-ssh-add -K ~/.ssh/id_rsa
+## Add ssh keys (--apple-use-keychain ensures that passwords are loaded from keychain)
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
 
 ## Useful aliases
 alias ..='cd ..'
