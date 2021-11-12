@@ -1,13 +1,10 @@
-## Load custom configuration
-source ~/.customrc
-
-# Comment out to disable auto update. 
+# Comment out to disable auto update.
 # Credit for update interval code: https://stackoverflow.com/a/16157488
 TIMESTAMP_FILE=~/.dshell.updatetimestamp
 date +"%Y%m%d" |         ## Generate timestamp
 tee $TIMESTAMP_FILE.tmp |      ## Save a copy for later usage
 cmp - $TIMESTAMP_FILE &> /dev/null ||       ## Fail if date-spec changed
-{  
+{
   ## Update timestamp and run code
   mv $TIMESTAMP_FILE.tmp $TIMESTAMP_FILE &&
   ~/.dshell/update.sh
@@ -57,15 +54,18 @@ if [[ $COLUMNS -gt 116 ]];
 then
 print $BLUE
 cat <<-'EOF'
-                    _                                       _                   _         _              _   _ 
+                    _                                       _                   _         _              _   _
                    | |                                     | |                 | |       | |            | | | |
  __      __   ___  | |   ___    ___    _ __ ___     ___    | |_    ___       __| |  ___  | |__     ___  | | | |
  \ \ /\ / /  / _ \ | |  / __|  / _ \  | '_ ` _ \   / _ \   | __|  / _ \     / _` | / __| | '_ \   / _ \ | | | |
   \ V  V /  |  __/ | | | (__  | (_) | | | | | | | |  __/   | |_  | (_) |   | (_| | \__ \ | | | | |  __/ | | | |
    \_/\_/    \___| |_|  \___|  \___/  |_| |_| |_|  \___|    \__|  \___/     \____| |___/ |_| |_|  \___| |_| |_|
-                                                                                                                   
-                                                                                                                   
+
+
 EOF
 
 curl wttr.in
 fi
+
+## Load custom configuration
+source ~/.customrc
