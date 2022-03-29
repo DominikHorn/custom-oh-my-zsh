@@ -43,9 +43,9 @@ ssh-add --apple-use-keychain ~/.ssh/id_rsa
 ## Useful aliases
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ll='ls -alh'
-alias gitc='git branch --merged | egrep -v "(^\*|development|dev|master)" | xargs git branch -d'
-alias gitcr='git branch --all --merged | egrep -v "(^\*|development|master|dev)" | sed -e "s/remotes\/origin\///" | xargs git push -d origin'
+alias ll='ls -G -alh'
+alias gitc='git branch --merged | egrep -v "(^\*|development|dev|master|main)" | xargs git branch -d'
+alias gitcr='git branch --all --merged | egrep -v "(^\*|development|master|dev|main)" | sed -e "s/remotes\/origin\///" | xargs git push -d origin'
 alias unzip2='ditto -V -x -k --sequesterRsrc --rsrc'
 alias qed='exit'
 
